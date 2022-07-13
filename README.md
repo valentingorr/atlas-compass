@@ -1,3 +1,3 @@
 ```bash
-npm install --legavy-peer-deps
+npm install --legacy-peer-deps
 ````
