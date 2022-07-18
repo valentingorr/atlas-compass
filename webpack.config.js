@@ -1,15 +1,20 @@
 const path = require("path");
 
+const webpack = require("webpack");
+
 module.exports = {
-	mode: "development",
+	mode: process.env.NODE_ENV === "production" ? "production" : "development",
 	target: "electron-renderer",
 	devtool: "inline-source-map",
-	watch: true,
+	watch: process.env.NODE_ENV === "production" ? false : true,
 	watchOptions: {
 		ignored: [
-			"index.js",
-			"**/node_modules"
-		] ,
+			"./index.js",
+			"./package.json",
+			"./package-lock.json",
+			"**/modules",
+			"**/node_modules",
+		],
 	},
 	stats: "errors-only",
 	entry: path.resolve(__dirname, "./src/index.jsx"),
@@ -17,6 +22,11 @@ module.exports = {
 		path: path.resolve(__dirname, "./public/"),
 		filename: "app.bundle.js"
 	},
+	plugins: [
+		new webpack.DefinePlugin({
+			"__REACT_DEVTOOLS_GLOBAL_HOOK__": "({ isDisabled: true })"
+		})
+	],
 	module: {
 		rules: [
 			{

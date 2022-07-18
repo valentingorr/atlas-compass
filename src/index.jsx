@@ -1,18 +1,23 @@
 import React from "react";
+
 import {
 	render
 } from "react-dom";
+
 import {
 	createRoot
 } from "react-dom/client";
 
 import "./style/style.scss";
 
+
 const App = () => {
 	return (
-		<>Hello React, Hello Electron</>
-	) ;
-} ;
+		<div className="App">
+			<p>Let's get started🥳</p>
+		</div>
+	);
+};
 
 export default App;
 
