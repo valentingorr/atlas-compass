@@ -1,8 +1,8 @@
 {
-  "name": "wer-boilerplate",
-  "productName": "wer-boilerplate",
-  "version": "1.0.0",
+  "name": "advanced-wer-boilerplate",
+  "productName": "advanced-wer-boilerplate",
   "description": "webpack + electron + react",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -31,6 +31,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0"
   }
 }

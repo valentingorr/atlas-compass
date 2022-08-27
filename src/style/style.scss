@@ -1,3 +1,29 @@
+@import "config";
+
+html, html > body, #root {
+	@include size(100%);
+}
+
+* {
+	text-decoration: inherit;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+	align-items: center;
+	list-style: none;
+}
+
+button, a {
+	cursor: pointer;
+	background-color: transparent;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+//---------------------------\\
+
 body {
 	background-color: #1d1d1d;
 	width: 100vw;
@@ -14,3 +40,5 @@ body {
 		font-size: 2rem;
 	}
 }
+
+//---------------------------\\
