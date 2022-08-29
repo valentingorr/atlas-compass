@@ -49,6 +49,11 @@ module.exports = {
 					"css-loader",
 					"sass-loader"
 				]
+			},
+			{
+				test: /\.svg$/,
+				exclude: /node_modules/,
+				use: ["@svgr/webpack", "url-loader"]
 			}
 		]
 	}
