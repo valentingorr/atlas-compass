@@ -31,8 +31,11 @@ import * as ACTIONS from "./redux/actions.js";
 import * as STYLE from "./style/_config.scss";
 import "./style/style.scss";
 
-//importing routes
+// importing routes
 import Home from "./routes/Home.jsx";
+
+// importing components
+import Frame from "./components/Frame.jsx";
 
 const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
@@ -46,6 +49,7 @@ const App = () => {
 
 	return (
 		<CONTEXT.default {...{user, STYLE}} >
+			<Frame />
 			<Routes>
 				<Route exact path="/" element={<Home />} />
 			</Routes>

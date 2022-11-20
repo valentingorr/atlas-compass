@@ -9,15 +9,24 @@ if(require("electron-squirrel-startup")) app.quit();
 
 let mainWindow;
 const createWindow = () => {
+	const [minWidth, minHeight] = [800, 600];
+	const [width, height] = [minWidth, minHeight];
 	mainWindow = new BrowserWindow({
-		width: 800,
-		height: 600,
+		minWidth, minHeight,
+		width, height,
+		icon: path.resolve(__dirname, "icon.png"),
 		autoHideMenuBar: true,
+		titleBarStyle: "hidden",
+		titleBarOverlay: {
+			color: "#1d1d1d",
+			symbolColor: "#eee",
+			height: 30
+		},
 		webPreferences: {
 			nodeIntegration: false,
 			worldSafeExecuteJavaScript: true,
 			contextIsolation: true,
-			preload: path.join(__dirname, "./src/preload.js")
+			preload: path.join(__dirname, "./preload.js")
 		}
 	});
 	mainWindow.loadFile(path.join(__dirname, "./public/index.html"));
